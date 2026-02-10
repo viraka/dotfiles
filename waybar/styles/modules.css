@@ -1,0 +1,161 @@
+/* Base module styles */
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#battery,
+#clock,
+#tray,
+#idle_inhibitor,
+#custom-power {
+  padding: 0 12px;
+  color: #e5e9f0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#idle_inhibitor:hover,
+#custom-power:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Clock - center spotlight */
+#clock {
+  background: linear-gradient(135deg, rgba(136, 192, 208, 0.15), rgba(129, 161, 193, 0.15));
+  color: #88c0d0;
+  font-weight: 600;
+  padding: 0 16px;
+  box-shadow: 0 0 20px rgba(136, 192, 208, 0.2);
+}
+
+#clock:hover {
+  background: linear-gradient(135deg, rgba(136, 192, 208, 0.25), rgba(129, 161, 193, 0.25));
+  box-shadow: 0 0 30px rgba(136, 192, 208, 0.4);
+}
+
+/* CPU with states */
+#cpu {
+  background: rgba(163, 190, 140, 0.1);
+  color: #a3be8c;
+}
+
+#cpu.warning {
+  background: rgba(235, 203, 139, 0.15);
+  color: #ebcb8b;
+}
+
+#cpu.critical {
+  background: rgba(191, 97, 106, 0.15);
+  color: #bf616a;
+}
+
+/* Memory with states */
+#memory {
+  background: rgba(180, 142, 173, 0.1);
+  color: #b48ead;
+}
+
+#memory.warning {
+  background: rgba(235, 203, 139, 0.15);
+  color: #ebcb8b;
+}
+
+#memory.critical {
+  background: rgba(191, 97, 106, 0.15);
+  color: #bf616a;
+}
+
+/* Audio */
+#pulseaudio {
+  background: rgba(136, 192, 208, 0.1);
+  color: #88c0d0;
+}
+
+#pulseaudio.muted {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Network */
+#network {
+  background: rgba(129, 161, 193, 0.1);
+  color: #81a1c1;
+}
+
+#network.disconnected {
+  background: rgba(191, 97, 106, 0.1);
+  color: #bf616a;
+}
+
+/* Battery */
+#battery {
+  background: rgba(163, 190, 140, 0.1);
+  color: #a3be8c;
+}
+
+#battery.charging {
+  background: rgba(136, 192, 208, 0.15);
+  color: #88c0d0;
+}
+
+#battery.plugged {
+  background: rgba(163, 190, 140, 0.15);
+  color: #a3be8c;
+}
+
+#battery.warning:not(.charging) {
+  background: rgba(235, 203, 139, 0.15);
+  color: #ebcb8b;
+}
+
+#battery.critical:not(.charging) {
+  background: rgba(191, 97, 106, 0.15);
+  color: #bf616a;
+}
+
+/* Tray */
+#tray {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+#tray > .passive {
+  opacity: 0.5;
+}
+
+#tray > .active {
+  opacity: 1;
+}
+
+#tray > .needs-attention {
+  color: #bf616a;
+}
+
+/* Idle Inhibitor */
+#idle_inhibitor {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#idle_inhibitor.activated {
+  background: rgba(235, 203, 139, 0.15);
+  color: #ebcb8b;
+}
+
+/* Power button */
+#custom-power {
+  background: rgba(191, 97, 106, 0.1);
+  color: #bf616a;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+#custom-power:hover {
+  background: rgba(191, 97, 106, 0.2);
+  box-shadow: 0 0 12px rgba(191, 97, 106, 0.4);
+}

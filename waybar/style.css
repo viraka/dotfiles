@@ -1,0 +1,119 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#workspaces,
+#clock,
+#tray,
+#idle_inhibitor,
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#battery
+{
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  padding: 0 12px;
+  margin: 0 4px;
+}
+
+
+#custom-arch {
+  background-image: url("/home/bsn/.config/waybar/icons/arch-linux.png");
+  background-size: 20px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 36px;
+  padding: 0;
+  transition: 0.2s all ease-in-out;
+}
+#custom-arch:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces {
+  padding: 0;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: #888888;
+  background: transparent;
+}
+
+#workspaces button.active {
+  color: #ffffff;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+#window {
+  color: #cccccc;
+}
+
+#clock {
+  font-weight: 500;
+}
+
+#cpu.warning,
+#memory.warning {
+  color: #ffaa00;
+}
+
+#cpu.critical,
+#memory.critical {
+  color: #ff4444;
+}
+
+#battery.warning {
+  color: #ffaa00;
+}
+
+#battery.critical {
+  color: #ff4444;
+}
+
+#pulseaudio.muted {
+  color: #888888;
+}
+
+#network.disconnected {
+  color: #888888;
+}
+
+#idle_inhibitor.activated {
+  color: #00ff88;
+}
+
+#custom-power {
+  color: #ff6666;
+  font-size: 15px;
+  padding: 0 15px 0 12px;
+  transition:0.2s all ease-in-out;
+}
+
+#custom-power:hover {
+  background: rgba(255, 100, 100, 0.2);
+}
+
+tooltip {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+tooltip label {
+  color: #ffffff;
+}

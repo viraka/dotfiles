@@ -1,0 +1,36 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Colors
+ **/
+/**
+ * Silver Surfer Rofi Theme
+ * Inspired by Norrin Radd and the Power Cosmic
+ */
+
+* {
+    /* Window backgrounds - Chrome metallic surfaces */
+    background:     #2a2a2aF5;  /* dark chrome gray, more opaque */
+    background-alt: #3a3a3aEE;  /* lighter chrome alternate rows */
+    
+    /* Text / foreground - Bright chrome silver of the Surfer */
+    foreground:     #f5f5f5FF;  /* bright white chrome, fully opaque */
+    
+    /* Selected and active items - Power Cosmic energy */
+    selected:       #e0e0e0FF;  /* brilliant white silver selection, fully opaque */
+    active:         #5ab4ffFF;  /* bright cosmic blue glow, fully opaque */
+    urgent:         #00d9ffFF;  /* intense power cosmic cyan, fully opaque */
+}
+
+window {
+    border-radius: 8px;
+    border: 3px;
+    border-color: #d0d0d0DD;  /* bright silver chrome border, strong presence */
+    padding: 10px;
+}
+
+listview {
+    spacing: 8px;
+}

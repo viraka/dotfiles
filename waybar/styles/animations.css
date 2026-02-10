@@ -1,0 +1,13 @@
+/* Smooth fade-in for waybar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+window#waybar {
+  animation: fadeIn 0.5s ease-out;
+}

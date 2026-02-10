@@ -1,0 +1,30 @@
+#workspaces {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 2px;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#workspaces button.active {
+  color: #88c0d0;
+  background: rgba(136, 192, 208, 0.15);
+  font-weight: 600;
+}
+
+#workspaces button.urgent {
+  color: #bf616a;
+  background: rgba(191, 97, 106, 0.15);
+}
