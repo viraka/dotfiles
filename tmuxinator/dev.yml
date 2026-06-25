@@ -1,0 +1,21 @@
+# Generic project workspace — works in ANY directory.
+# Run `mux start dev` (or `tmuxinator start dev`) from inside a project.
+# The session name and root are derived from the current directory via ERB,
+# so this single file covers all your everyday projects.
+#
+#   ┌──────────────┬──────────────┐
+#   │  claude code │  dev server  │
+#   ├──────────────┼──────────────┤
+#   │  scratch     │  lazygit     │
+#   └──────────────┴──────────────┘
+name: <%= File.basename(Dir.pwd).gsub(/[.: ]/, '_') %>
+root: <%= Dir.pwd %>
+
+windows:
+  - code:
+      layout: tiled        # four equal panes (2x2 grid)
+      panes:
+        - claude       # top-left
+        - pnpm dev     # top-right — dev server
+        -              # bottom-left — scratch (empty shell for codegen, etc.)
+        - lazygit      # bottom-right

@@ -1,0 +1,22 @@
+# Per-repo override — for the project that needs more than the generic `dev`.
+# Copy this file, rename it (the filename is the project name you pass to
+# `mux start <name>`), set `root`, and tweak the windows/panes.
+#
+# Launch with:  mux start bigrepo
+name: bigrepo
+root: ~/code/bigrepo            # <-- set to the actual repo path
+
+windows:
+  - code:                       # window 1 — same 4-pane grid as `dev`
+      layout: tiled
+      panes:
+        - claude
+        - pnpm dev
+        -
+        - lazygit
+  - services:                   # window 2 — the extra panes this repo needs
+      layout: even-horizontal
+      panes:
+        - # e.g. docker compose up
+        - # e.g. pnpm codegen --watch
+        - # e.g. redis-cli
