@@ -18,6 +18,16 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- LazyVim extras. These MUST be imported after `lazyvim.plugins` and before
+    -- your own `plugins` import — LazyVim enforces this order. Language-specific
+    -- overrides go in plugins/lang.lua.
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.typescript.vtsls" },
+    { import = "lazyvim.plugins.extras.lang.typescript.oxc" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.docker" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
     -- import/override with your plugins
     { import = "plugins" },
   },

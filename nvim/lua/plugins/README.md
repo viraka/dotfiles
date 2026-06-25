@@ -9,7 +9,7 @@ Every file here is auto-imported by lazy.nvim (`{ import = "plugins" }` in
 
 | File | Plugin / purpose | Key entry points |
 |------|------------------|------------------|
-| `lang.lua` | Language support — imports of LazyVim lang extras (TS, Tailwind, JSON, Docker, Markdown) | — |
+| `lang.lua` | Language-specific overrides (LSP server settings, etc.) | — |
 | `lspconfig.lua` | `nvim-lspconfig` — how diagnostics are rendered | — |
 | `inc-rename.lua` | `inc-rename.nvim` — rename with live preview | `<leader>cr` |
 | `conform.lua` | `conform.nvim` — Prettier formatting (+ mason install) | format on save, `<leader>cf` |
@@ -24,7 +24,8 @@ Every file here is auto-imported by lazy.nvim (`{ import = "plugins" }` in
 - **Diagnostic-on-hover autocmd**, other autocmds → `../config/autocmds.lua`
 - **Options** like `updatetime` → `../config/options.lua`
 - **Custom keymaps** (e.g. `jk` to exit insert) → `../config/keymaps.lua`
-- **Which extras are enabled** → `lang.lua` (no longer `lazyvim.json`)
+- **Which extras are enabled** → `../config/lazy.lua` `spec` (imports must come
+  before this folder loads; no longer `lazyvim.json`). Override them in `lang.lua`.
 
 ## How to change things
 
