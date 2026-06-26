@@ -4,6 +4,6 @@
 # here separately. delta still picks up styling (navigate, dark, side-by-side,
 # etc.) from the [delta] section of your ~/.gitconfig automatically.
 git:
-  paging:
-    colorArg: always
-    pager: delta --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never
