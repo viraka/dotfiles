@@ -32,17 +32,6 @@ return {
       return opts
     end,
   },
-
-  -- Make sure the `prettier` binary actually gets installed.
-  -- (Mason moved orgs: the current repo is mason-org/mason.nvim. Matching that
-  -- name exactly is what lets these opts MERGE with LazyVim's mason spec rather
-  -- than creating a second, conflicting plugin.)
-  {
-    "mason-org/mason.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = opts.ensure_installed or {}
-      table.insert(opts.ensure_installed, "prettier")
-      return opts
-    end,
-  },
+  -- NOTE: the `prettier` binary is installed via Mason. All Mason installs are
+  -- declared in one place — see plugins/mason.lua.
 }

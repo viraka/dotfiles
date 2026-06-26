@@ -10,6 +10,19 @@
 return {
   {
     "folke/snacks.nvim",
+    -- <c-/> stays the floating terminal (configured in opts.terminal below).
+    -- <c-\> (freed up when toggleterm was removed) opens a bottom split instead.
+    -- Passing `win` per-call overrides the float default from opts.terminal.
+    keys = {
+      {
+        [[<c-\>]],
+        function()
+          Snacks.terminal.toggle(nil, { win = { position = "bottom", height = 0.3, border = "top" } })
+        end,
+        mode = { "n", "t" },
+        desc = "Terminal (bottom split)",
+      },
+    },
     opts = {
       -- ── Background modules LazyVim enables by default ──────────────────
       -- Listed here so you can SEE them. Flip any to `enabled = false` to kill it.
@@ -23,6 +36,20 @@ return {
       words = { enabled = true }, -- highlight other uses of word under cursor
       -- statuscolumn stays off here: LazyVim wires the status column elsewhere.
       statuscolumn = { enabled = false },
+
+      -- ── Terminal (LazyVim toggles it with <c-/> and <c-_>) ─────────────
+      -- Make snacks' built-in terminal behave like toggleterm: a centered
+      -- floating window with a rounded border instead of a bottom split.
+      -- <c-/> toggles it open/closed; to leave terminal-insert mode use <c-/>
+      -- again, or the default <c-\><c-n>.
+      terminal = {
+        win = {
+          position = "float",
+          border = "rounded",
+          height = 0.85,
+          width = 0.85,
+        },
+      },
 
       -- ── File explorer (your <leader>e) ─────────────────────────────────
       explorer = { enabled = true },

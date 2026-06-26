@@ -79,7 +79,7 @@ return {
       end
 
       -- Mason puts its binaries on Neovim's PATH, so exepath() finds the adapter
-      -- once `js-debug-adapter` has been installed (see the mason spec below).
+      -- once `js-debug-adapter` has been installed (declared in plugins/mason.lua).
       local js_debug = vim.fn.exepath("js-debug-adapter")
       for _, adapter in ipairs({ "pwa-node", "pwa-chrome" }) do
         dap.adapters[adapter] = {
@@ -124,16 +124,6 @@ return {
           },
         }
       end
-    end,
-  },
-
-  -- Install the JS debug adapter binary.
-  {
-    "mason-org/mason.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = opts.ensure_installed or {}
-      table.insert(opts.ensure_installed, "js-debug-adapter")
-      return opts
     end,
   },
 }
