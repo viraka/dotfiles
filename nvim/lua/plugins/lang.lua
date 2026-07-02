@@ -37,6 +37,22 @@ return {
           -- (Setting filetypes REPLACES the default list — keep all five.)
           filetypes = { "graphql", "typescript", "typescriptreact", "javascript", "javascriptreact" },
         },
+
+        -- Emmet: expand abbreviations (`div`, `.card`, `ul>li*3`) into full
+        -- markup. Type the abbreviation and accept the completion item to
+        -- expand it. LazyVim auto-installs the binary via Mason when the
+        -- server is declared here — no mason.lua edit needed.
+        emmet_language_server = {
+          filetypes = {
+            "html",
+            "css",
+            "scss",
+            "sass",
+            "less",
+            "javascriptreact",
+            "typescriptreact",
+          },
+        },
       },
     },
   },
