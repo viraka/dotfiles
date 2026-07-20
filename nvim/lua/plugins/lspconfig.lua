@@ -8,12 +8,12 @@ return {
     opts = {
       -- LazyVim feeds this table straight into vim.diagnostic.config().
       diagnostics = {
-        -- Inline message at the end of the line (kept short with a prefix icon).
-        virtual_text = {
-          spacing = 4,
-          source = "if_many",
-          prefix = "●",
-        },
+        -- No inline end-of-line message on every line — it clutters the buffer.
+        -- Gutter signs still mark which lines have issues; the full message
+        -- shows in the hover float when the cursor rests on the line (see the
+        -- CursorHold autocmd in config/autocmds.lua), or in the diagnostics
+        -- list (<leader>xx Trouble / :lua vim.diagnostic.setloclist()).
+        virtual_text = false,
         severity_sort = true, -- errors render above warnings on the same line
         -- Styling for the floating window that pops up on hover (see autocmds).
         float = {
