@@ -1,4 +1,6 @@
 #!/bin/bash
+# This only symlinks configs. The external tools each config needs (neovim,
+# ripgrep, fd, node, lazygit, fonts, …) are listed in DEPENDENCIES.md.
 ln -sf ~/dotfiles/hypr ~/.config/
 ln -sf ~/dotfiles/waybar ~/.config/
 ln -sf ~/dotfiles/kitty ~/.config/
@@ -17,4 +19,4 @@ fi
 mkdir -p "$lazygit_dir"
 ln -sf ~/dotfiles/lazygit/config.yml "$lazygit_dir/config.yml"
 
-echo "Dotfiles linked!"
+echo "Dotfiles linked! See DEPENDENCIES.md for the tools each config needs."
