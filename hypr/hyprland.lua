@@ -205,18 +205,18 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Screenshots
--- Region → clipboard
-hl.bind("Print",             hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
--- Region → file
-hl.bind("SHIFT + Print",     hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png'))
--- Window → clipboard
-hl.bind("CTRL + Print",      hl.dsp.exec_cmd('grim -g "$(slurp -w)" - | wl-copy'))
--- Window → file
-hl.bind("CTRL + SHIFT + Print", hl.dsp.exec_cmd('grim -g "$(slurp -w)" ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png'))
--- Fullscreen → clipboard
-hl.bind("ALT + Print",       hl.dsp.exec_cmd("grim - | wl-copy"))
--- Fullscreen → file
-hl.bind("ALT + SHIFT + Print", hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png"))
+-- Region → annotate → clipboard
+hl.bind("Print",                hl.dsp.exec_cmd('grimblast save area /tmp/screenshot.png && satty --filename /tmp/screenshot.png --copy-command wl-copy'))
+-- Region → annotate → file
+hl.bind("SHIFT + Print",        hl.dsp.exec_cmd('grimblast save area /tmp/screenshot.png && satty --filename /tmp/screenshot.png --output-filename ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png'))
+-- Window → annotate → clipboard
+hl.bind("CTRL + Print",         hl.dsp.exec_cmd('grimblast save active /tmp/screenshot.png && satty --filename /tmp/screenshot.png --copy-command wl-copy'))
+-- Window → annotate → file
+hl.bind("CTRL + SHIFT + Print", hl.dsp.exec_cmd('grimblast save active /tmp/screenshot.png && satty --filename /tmp/screenshot.png --output-filename ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png'))
+-- Full screen → clipboard (no annotation, instant)
+hl.bind("ALT + Print",          hl.dsp.exec_cmd('grimblast copy screen'))
+-- Full screen → file
+hl.bind("ALT + SHIFT + Print",  hl.dsp.exec_cmd('grimblast save screen ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png'))
 
 -- Brightness (direct)
 hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl set +10%"))
